@@ -3,7 +3,7 @@ import DownloadButton from "./DownloadButton";
 function About() {
   return (
     <>
-    <div className="flex justify-evenly items-center">
+    <div className=" container flex justify-between items-center">
 
     <div className="basis-2/5">
         <h2 className=" text-2xl py-5">Hello, I'm Ritesh Kumar</h2>
