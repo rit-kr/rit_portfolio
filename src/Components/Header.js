@@ -19,7 +19,7 @@ function Header() {
                         </ul>
                     </div>
                     <div className="">
-                        <NavLink className="flex p-5" to="/login">
+                        <NavLink className="flex p-5" to="/contact">
                             <span>Contact Me</span>
                         </NavLink>
                     </div>

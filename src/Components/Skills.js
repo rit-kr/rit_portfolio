@@ -9,10 +9,11 @@ function Skills() {
                 <div>
                     <ul className="flex flex-wrap justify-between align-center">
                         <li className="basis-2/5 bg-slate-600 my-4 p-4">HTML/CSS</li>
-                        <li className="basis-2/5 bg-slate-600 my-4 p-4">TailWindCSS</li>
-                        <li className="basis-2/5 bg-slate-600 my-4 p-4">JavaScript</li>
-                        <li className="basis-2/5 bg-slate-600 my-4 p-4">reactJS</li>
                         <li className="basis-2/5 bg-slate-600 my-4 p-4">Korean language</li>
+                        <li className="basis-2/5 bg-slate-600 my-4 p-4">JavaScript</li>
+                        <li className="basis-2/5 bg-slate-600 my-4 p-4">TailWindCSS</li>
+                        <li className="basis-2/5 bg-slate-600 my-4 p-4">reactJS</li>
+                        <li className="basis-2/5 bg-slate-600 my-4 p-4">SQL</li>
                     </ul>
                 </div>
             </div>

@@ -3,17 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import Header from './Components/Header';
 import About from './Components/About';
+import Contact from './Components/Contact';
+import Skills from './Components/Skills';
 
 function App() {
   return (
     <>
-      <div className='text-blue-600/75'>
-        <Routes>
-          <Route path="/" element= {<Home/>}/>
-          <Route path="/header" element= {<Header/>}/>
-          {/* <Route path="/about" element= {<About/>}/> */}
-
-        </Routes>
+      <div className='text-gray-200'>
+        <Home/>
       </div>
     </>
   );

@@ -1,7 +1,9 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiCodewars } from "react-icons/si";
+import emailjs from '@emailjs/browser';
 
 import { Button, Form, Input } from 'antd';
+import { useRef } from "react";
 
 const layout = {
   labelCol: {
@@ -28,6 +30,20 @@ const onFinish = (values) => {
 // const { TextArea } = Input;
 
 export default function Contact() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_rit', 'template_rit', form.current, 'X471RlOMMI_kzQOPW')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   return (
     <>
       <div className="container pb-8">
@@ -46,18 +62,18 @@ export default function Contact() {
             <div className="flex flex-wrap justify-between align-center text-base py-4">
               <div className="basis-1/2">
                 <ul>Address
-                <li className="text-xs">Delhi, India</li>
+                  <li className="text-xs">Delhi, India</li>
                 </ul>
               </div>
               <div className="basis-1/2">
                 <ul>Email
                   <li className="text-xs">
-                      rit.kr.7@gmail.com
+                    rit.kr.7@gmail.com
                   </li>
                 </ul>
                 <ul>Phone
                   <li className="text-xs">
-                      +91-9910645499
+                    +91-9910645499
                   </li>
                 </ul>
               </div>
@@ -65,27 +81,39 @@ export default function Contact() {
           </div>
           <div className="flex flex-col basis-2/5">
             <h4 className="text-xl my-4 self-center">Contact Me</h4>
-            <div>
-
-              <Form {...layout} name="nest-messages" onFinish={onFinish} style={{ maxWidth: 600, }}
+            {/* <div className="text-base"> */}
+            {/* 
+              <Form {...layout} name="nest-messages" onFinish={onFinish} style={{ maxWidth: 600, fontSize:'10rem'}}
                 validateMessages={validateMessages}
               >
-                <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true, },]}>
+                <Form.Item name={['user', 'name'], } label="Name"  rules={[{ required: true, },]}>
                   <Input />
                 </Form.Item>
-                <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email', },]}>
+                <Form.Item name={['user', 'email'],  'user_email'} label="Email" rules={[{ type: 'email', },]}>
                   <Input />
                 </Form.Item>
                 <Form.Item name={['user', 'message']} label="Message">
                   <Input.TextArea rows={4} />
-                </Form.Item>
-                {/* <Form.Item label="TextArea">
+                </Form.Item> */}
+            {/* <Form.Item label="TextArea">
                          <TextArea rows={4} />
                         </Form.Item> */}
-                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8, }}>
-                  <Button htmlType="submit">Submit</Button>
+            {/* <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8, }}>
+                  <Button className="text-blue-600/70" htmlType="submit">Submit</Button>
                 </Form.Item>
-              </Form>
+              </Form> */}
+            {/* </div> */}
+            <div>
+              <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
+                <label className="text-base">Name</label>
+                <input className="text-black py-1 rounded" type="text" name="from_name" />
+                <label className="text-base">Email</label>
+                <input className="text-black py-1 rounded" type="email" name="from_email" />
+                <label className="text-base">Message</label>
+                <textarea  className="text-black py-1 rounded"name="message"rows={4} />
+                <Button className="text-blue-600/70 my-1" htmlType="submit" value="Send">Submit</Button>
+                {/* <input className="text-blue-600/70" type="submit" value="Send" /> */}
+              </form>
             </div>
           </div>
         </div>
