@@ -37,6 +37,7 @@ export default function Contact() {
     emailjs.sendForm('service_rit', 'template_rit', form.current, 'X471RlOMMI_kzQOPW')
       .then((result) => {
           console.log(result.text);
+          window.location.reload(true)
       }, (error) => {
           console.log(error.text);
       });
