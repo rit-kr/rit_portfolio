@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 function Header() {
     return (
         <>
-            <div className="bg-black">
+            <div className="bg-slate-800">
                 <div className="container flex justify-between py-2 sticky top-0">
 
                     <div className="flex">

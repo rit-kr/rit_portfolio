@@ -14,7 +14,7 @@ function About() {
 
     </div>
     <div>
-      <img src='/assets/image/coding.jpg' width="500rem" alt="coding" />
+      <img src='/assets/image/coding.png' width="500rem" alt="coding" />
     </div>
     </div>
 
