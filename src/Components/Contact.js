@@ -5,29 +5,27 @@ import emailjs from '@emailjs/browser';
 import { Button, Form, Input } from 'antd';
 import { useRef } from "react";
 
-const layout = {
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 16,
-  },
-};
+// const layout = {
+//   labelCol: {
+//     span: 8,
+//   },
+//   wrapperCol: {
+//     span: 16,
+//   },
+// };
 
 /* eslint-disable no-template-curly-in-string */
-const validateMessages = {
-  required: '${label} is required!',
-  types: {
-    email: '${label} is not a valid email!',
-  }
-};
+// const validateMessages = {
+//   required: '${label} is required!',
+//   types: {
+//     email: '${label} is not a valid email!',
+//   }
+// };
 /* eslint-enable no-template-curly-in-string */
 
-const onFinish = (values) => {
-  console.log(values);
-};
-
-// const { TextArea } = Input;
+// const onFinish = (values) => {
+//   console.log(values);
+// };
 
 export default function Contact() {
 
@@ -106,13 +104,12 @@ export default function Contact() {
             <div>
               <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
                 <label className="text-base">Name</label>
-                <input className="text-black py-1 rounded" type="text" name="from_name" />
+                <input className="text-gray-800 p-2 rounded" type="text" name="from_name"  placeholder="Please enter your name"/>
                 <label className="text-base">Email</label>
-                <input className="text-black py-1 rounded" type="email" name="from_email" />
+                <input className="text-gray-800 p-2 rounded" type="email" name="from_email" placeholder="Please enter your email"/>
                 <label className="text-base">Message</label>
-                <textarea  className="text-black py-1 rounded"name="message"rows={4} />
+                <textarea  className=" text-gray-800 text-blue-600/70 p-2 rounded"name="message"rows={4} placeholder="Please enter your message" />
                 <Button className="text-blue-600/70 my-1" htmlType="submit" value="Send">Submit</Button>
-                {/* <input className="text-blue-600/70" type="submit" value="Send" /> */}
               </form>
             </div>
           </div>
